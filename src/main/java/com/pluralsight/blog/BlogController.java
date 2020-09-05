@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class BlogController {
     @RequestMapping("/")
     public String listPosts(ModelMap modelMap){
-        modelMap.put("title", "Joe's diary");
+        modelMap.put("title", "Blog Post 1");
         return "home";
     }
 
