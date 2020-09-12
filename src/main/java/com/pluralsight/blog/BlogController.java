@@ -14,14 +14,14 @@ public class BlogController {
     private PostRepository postRepository;
 
     public BlogController(PostRepository postRepository){
+        this.postRepository = postRepository;
 
     }
 
     @RequestMapping("/")
     public String listPosts(ModelMap modelMap){
-        List<Post> post = new ArrayList<>();
-        post = postRepository.getAllPosts();
-        modelMap.put("title", "Blog Post 1");
+
+        List<Post> post = postRepository.getAllPosts();
         modelMap.put("posts", post);
         return "home";
     }
